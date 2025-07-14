@@ -41,9 +41,9 @@ def store_question(questions_list, dir):
     print("Storing questions done.")
 
 
-def embedding_question(model_dir, questions_list):
+def embedding_question(questions_list):
     print("Embedding questions...")
-    model = SentenceTransformer(model_dir)
+    model = SentenceTransformer("all-MiniLM-L6-v2")
 
     emb_list = []
     questions_num = len(questions_list)
@@ -101,8 +101,6 @@ def argument_parser():
     parser.add_argument("--store-question", action="store_true", default=False)
     parser.add_argument("--store-embedding", action="store_true", default=False)
 
-    parser.add_argument("--embedding-model-dir", type=str, help="Directory of the embedding model to use")
-
     args = parser.parse_args()
     return args
 
@@ -124,7 +122,7 @@ if __name__ == "__main__":
     # print(questions_list)
 
     # embed questions
-    emb_list = embedding_question(args.embedding_model_dir, questions_list)
+    emb_list = embedding_question(questions_list)
 
     # store embedding
     if args.store_embedding:
