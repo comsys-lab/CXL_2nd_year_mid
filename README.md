@@ -3,8 +3,6 @@
 
 ## Experiment Setup for CPU server
 
----
-
 ### HW configuration
 
 ---
@@ -19,8 +17,6 @@
 
 ### Prerequisite
 
----
-
 - python 3.11.7
     - pandas
     - numpy
@@ -31,8 +27,6 @@
 - curl
 
 ### Build Docker Images
-
----
 
 - Build base docker images
     
@@ -53,8 +47,6 @@
     
 
 ### Download Data
-
----
 
 - Download preprocessed common crawl from hugging face
     
@@ -78,33 +70,23 @@
 
 ### Build VectorDB
 
----
-
 - change DATASET_DIR in the script to the directory of downloaded data (takes about 1~2 days)
 
 ```bash
 bash build_vectorDB.sh
 ```
 
-### Git clone HMSDK, Qdrant
-
----
+### Git Clone HMSDK, Qdrant
 
 - git clone HMDSK and Qdrant from
 
 ### Build Custom Kernel
 
----
-
 - Follow README.md in Setup/HMSDK_CXL
 
 ## Experiment Setup for GPU Server
 
----
-
 ### HW configuration
-
----
 
 | **CPU** | 2× Intel Xeon 4410Y (Sapphire Rapids) @2.5 GHz, 12 cores |
 | --- | --- |
@@ -114,8 +96,6 @@ bash build_vectorDB.sh
 | **GPU** | 2x NVIDIA GeForce RTX 4090 |
 
 ### Build Docker Images
-
----
 
 ```bash
 docker build -f Dockerfile.embedding -t embedding_image .
