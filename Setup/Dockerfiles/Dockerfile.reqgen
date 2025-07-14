@@ -1,0 +1,6 @@
+FROM python:3.9-slim
+RUN pip install --no-cache-dir requests flask
+RUN pip install --no-cache-dir datasets numpy
+WORKDIR /app
+
+COPY question_server_ttft_zipf.py /app/question_server_ttft_zipf.py
