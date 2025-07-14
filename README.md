@@ -86,6 +86,12 @@
 bash build_vectorDB.sh
 ```
 
+### Git clone HMSDK, Qdrant
+
+---
+
+- git clone HMDSK and Qdrant from
+
 ### Build Custom Kernel
 
 ---
