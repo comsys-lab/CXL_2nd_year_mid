@@ -177,3 +177,56 @@ docker build -f Dockerfile.llm -t llm_inference_image .
     
     python3 hot_page_analysis.py --csv-file="access_count_sorted.csv" --access-threshold=200
     ```
+
+## Launch Evaluation
+
+### Prerequisite
+
+- Change QDRANT_DATASET_DIR, EMBEDDED_QUESTION_DIR, QUESTION_DIR in sh to own directory
+- Change PEBS_DIR in sh to own directory
+- Compile reordering_agent.c
+    
+    ```bash
+    cd HMSDK_CXL/pebs_userspace
+    gcc -o reordering_agent reordering_agent.c -lcurl
+    ```
+    
+- Compile pebs_userspace.c
+    
+    ```bash
+    cd HMSDK_CXL/pebs_userspace
+    gcc -o pebs_userspace pebs_userspace.c
+    ```
+    
+
+### Baseline
+
+- Start experiment shell script
+    
+    ```bash
+    bash Baseline.sh
+    ```
+    
+
+### AutoNUMA
+
+- Change kernel to 6.6.0-hmsdk 2.0
+- Start experiment shell script
+    
+    ```bash
+    bash AutoNUMA.sh
+    ```
+    
+
+### HMSDK
+
+- Start experiment shell script
+    
+    ```bash
+    bash HMSDK.sh
+    ```
+    
+
+### Bauhaus
+
+- Start experiment shell script
