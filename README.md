@@ -184,6 +184,7 @@ docker build -f Dockerfile.llm -t llm_inference_image .
 
 - Change QDRANT_DATASET_DIR, EMBEDDED_QUESTION_DIR, QUESTION_DIR in sh to own directory
 - Change PEBS_DIR in sh to own directory
+- Change URL in reordering_agent.c to own url
 - Compile reordering_agent.c
     
     ```bash
